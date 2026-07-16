@@ -293,33 +293,35 @@
 
         /* Product mockup */
 
-       .product-stage {
+      .product-stage {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 600px;
+    min-height: 650px;
     overflow: visible;
+    isolation: isolate;
 }
 
-        .product-glow {
+.product-glow {
     position: absolute;
-    width: 650px;
-    height: 650px;
+    z-index: 0;
+
+    width: 680px;
+    height: 680px;
+
+    border-radius: 50%;
 
     background: radial-gradient(
         circle,
-        rgba(60,145,255,.55) 0%,
-        rgba(30,90,220,.30) 35%,
-        rgba(20,40,90,.10) 60%,
-        transparent 80%
+        rgba(82, 165, 255, 0.65) 0%,
+        rgba(42, 116, 235, 0.35) 30%,
+        rgba(20, 64, 150, 0.14) 55%,
+        transparent 78%
     );
 
-    filter: blur(90px);
-    border-radius: 50%;
-    z-index: 0;
-
-    animation: glowPulse 7s ease-in-out infinite;
+    filter: blur(85px);
+    animation: glow-pulse 7s ease-in-out infinite;
 }
 
         .slab-guard {
@@ -724,27 +726,125 @@
         }
         .hero-product {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+
     display: block;
-
-    width: 700px;      /* Increase this */
+    width: clamp(520px, 42vw, 760px);
     max-width: none;
-
     height: auto;
+
     object-fit: contain;
 
-    filter: drop-shadow(0 35px 55px rgba(0,0,0,.45));
-    animation: product-float 5s ease-in-out infinite;
+    filter:
+        drop-shadow(0 0 28px rgba(87, 174, 255, 0.45))
+        drop-shadow(0 38px 60px rgba(0, 0, 0, 0.5));
+
+    animation: product-float 6s ease-in-out infinite;
+}
+
+.product-reflection {
+    position: absolute;
+    z-index: 1;
+    bottom: 35px;
+
+    width: 72%;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(83, 169, 255, 0.38) 0%,
+        rgba(52, 122, 238, 0.16) 38%,
+        transparent 72%
+    );
+
+    filter: blur(28px);
+    transform: scaleY(0.55);
+    animation: reflection-pulse 6s ease-in-out infinite;
+}
+
+.particles {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    bottom: 5%;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+    background: rgba(113, 192, 255, 0.9);
+
+    box-shadow:
+        0 0 8px rgba(80, 165, 255, 0.9),
+        0 0 16px rgba(80, 165, 255, 0.5);
+
+    opacity: 0;
+    animation: particle-rise linear infinite;
+}
+
+@keyframes glow-pulse {
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.9;
+    }
 }
 
 @keyframes product-float {
     0%,
     100% {
-        transform: translateY(0) rotate(3deg);
+        transform: translateY(0) rotate(1deg);
     }
 
     50% {
-        transform: translateY(-16px) rotate(1deg);
+        transform: translateY(-16px) rotate(-1deg);
+    }
+}
+
+@keyframes reflection-pulse {
+    0%,
+    100% {
+        transform: scaleX(0.9) scaleY(0.5);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scaleX(1.08) scaleY(0.62);
+        opacity: 0.9;
+    }
+}
+
+@keyframes particle-rise {
+    0% {
+        transform: translateY(0) scale(0.4);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-520px) scale(1.15);
+        opacity: 0;
     }
 }
     </style>
@@ -832,14 +932,17 @@
                     </div>
                 </div>
 
-                <div class="product-stage">
+               <div class="product-stage">
     <div class="product-glow"></div>
+    <div class="particles" id="particles"></div>
 
     <img
         src="assets/products/arx-slab-guard-v2.png"
         alt="ARX graded card slab guard"
         class="hero-product"
     >
+
+    <div class="product-reflection"></div>
 </div>
             </div>
         </section>
