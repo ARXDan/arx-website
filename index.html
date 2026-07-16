@@ -713,6 +713,27 @@
                 text-align: center;
             }
         }
+        .hero-product {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(420px, 100%);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 35px 55px rgba(0, 0, 0, 0.45));
+    animation: product-float 5s ease-in-out infinite;
+}
+
+@keyframes product-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(3deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(1deg);
+    }
+}
     </style>
 </head>
 
@@ -798,22 +819,15 @@
                     </div>
                 </div>
 
-                <div class="product-stage" aria-label="ARX slab guard preview">
-                    <div class="product-glow"></div>
+                <div class="product-stage">
+    <div class="product-glow"></div>
 
-                    <div class="slab-guard">
-                        <div class="slab-inner">
-                            <div class="slab-label">
-                                <strong>ARX</strong>
-                                <div class="grade">10</div>
-                            </div>
-
-                            <div class="card-placeholder">
-                                Product render coming soon
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <img
+        src="assets/products/arx-slab-guard.png"
+        alt="ARX graded card slab guard"
+        class="hero-product"
+    >
+</div>
             </div>
         </section>
 
