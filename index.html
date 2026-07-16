@@ -751,6 +751,41 @@
     will-change: transform;
 }
 
+.hero-product-reflection{
+    position:relative;
+    z-index:2;
+
+    width:clamp(520px,40vw,720px);
+
+    bottom:-290px;
+
+    transform:
+        rotate(3deg)
+        scaleY(-1);
+
+    opacity:.18;
+
+    filter:
+        blur(3px)
+        brightness(.6);
+
+    mask-image:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.8),
+        transparent 75%
+    );
+
+    -webkit-mask-image:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.8),
+        transparent 75%
+    );
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
 .product-reflection {
     position: absolute;
 
@@ -1002,6 +1037,7 @@
               <div class="product-stage" id="product-stage">
     <div class="product-glow"></div>
     <div class="particles" id="particles"></div>
+    <div class="product-floor"></div>
 
     <img
         src="assets/products/arx-slab-guard-v2.png"
@@ -1011,7 +1047,11 @@
     >
 
     <div class="product-shine"></div>
-    <div class="product-reflection"></div>
+    <img
+    src="assets/products/arx-slab-guard-v2.png"
+    alt=""
+    class="hero-product-reflection"
+/>
 </div>
             </div>
         </section>
