@@ -295,12 +295,14 @@
 
       .product-stage {
     position: relative;
+    overflow: visible;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 
     min-height: 760px;
-    overflow: visible;
+    
 }
 
 .product-floor{
@@ -835,18 +837,24 @@
 .product-floor {
     position: absolute;
     left: 50%;
-    bottom: 110px;
+    bottom: 35px;
+
     width: 460px;
     height: 90px;
+
     transform: translateX(-50%);
+
     border-radius: 50%;
+
     background: radial-gradient(
         ellipse,
-        rgba(76, 164, 255, 0.32) 0%,
-        rgba(76, 164, 255, 0.12) 45%,
+        rgba(76, 164, 255, 0.4) 0%,
+        rgba(76, 164, 255, 0.16) 45%,
         transparent 75%
     );
+
     filter: blur(18px);
+    pointer-events: none;
     z-index: 1;
 }
 
@@ -1076,11 +1084,9 @@
             class="hero-product"
             id="hero-product"
         >
-
+<div class="product-floor"></div>
         <div class="product-shine"></div>
     </div>
-
-    <div class="product-floor"></div>
 </div>
         </section>
 
