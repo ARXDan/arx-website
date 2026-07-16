@@ -753,24 +753,57 @@
 
 .product-reflection {
     position: absolute;
-    z-index: 1;
-    bottom: 35px;
 
-    width: 72%;
-    height: 105px;
+    bottom: 10px;
+    left: 50%;
+
+    width: 340px;
+    height: 70px;
+
+    transform: translateX(-50%) scaleY(.35);
 
     border-radius: 50%;
 
     background: radial-gradient(
-        ellipse at center,
-        rgba(83, 169, 255, 0.38) 0%,
-        rgba(52, 122, 238, 0.16) 38%,
+        ellipse,
+        rgba(95,175,255,.40) 0%,
+        rgba(65,140,255,.18) 40%,
+        rgba(20,40,90,.05) 65%,
+        transparent 85%
+    );
+
+    filter: blur(26px);
+
+    z-index: 1;
+
+    animation: reflection-pulse 6s ease-in-out infinite;
+}
+
+.product-shine {
+    position: absolute;
+    z-index: 4;
+    top: 8%;
+    left: 18%;
+
+    width: 22%;
+    height: 78%;
+
+    pointer-events: none;
+    opacity: 0;
+
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.02) 34%,
+        rgba(180, 220, 255, 0.38) 48%,
+        rgba(255, 255, 255, 0.7) 52%,
+        rgba(180, 220, 255, 0.28) 58%,
         transparent 72%
     );
 
-    filter: blur(28px);
-    transform: scaleY(0.55);
-    animation: reflection-pulse 6s ease-in-out infinite;
+    filter: blur(3px);
+    transform: translateX(-300%) skewX(-12deg);
+    animation: shine-sweep 7s ease-in-out infinite;
 }
 
 .particles {
@@ -825,16 +858,18 @@
 }
 
 @keyframes reflection-pulse {
+
     0%,
-    100% {
-        transform: scaleX(0.9) scaleY(0.5);
-        opacity: 0.55;
+    100%{
+        opacity:.45;
+        transform:translateX(-50%) scaleX(.9) scaleY(.35);
     }
 
-    50% {
-        transform: scaleX(1.08) scaleY(0.62);
-        opacity: 0.9;
+    50%{
+        opacity:.85;
+        transform:translateX(-50%) scaleX(1.15) scaleY(.45);
     }
+
 }
 
 @keyframes particle-rise {
@@ -853,6 +888,29 @@
 
     100% {
         transform: translateY(-520px) scale(1.15);
+        opacity: 0;
+    }
+}
+
+@keyframes shine-sweep {
+    0%,
+    58% {
+        transform: translateX(-300%) skewX(-12deg);
+        opacity: 0;
+    }
+
+    64% {
+        opacity: 0.8;
+    }
+
+    78% {
+        transform: translateX(360%) skewX(-12deg);
+        opacity: 0.65;
+    }
+
+    84%,
+    100% {
+        transform: translateX(360%) skewX(-12deg);
         opacity: 0;
     }
 }
@@ -952,6 +1010,7 @@
         id="hero-product"
     >
 
+    <div class="product-shine"></div>
     <div class="product-reflection"></div>
 </div>
             </div>
