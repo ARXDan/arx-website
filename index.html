@@ -102,6 +102,18 @@
         .brand {
             text-decoration: none;
         }
+        
+        .brand-logo {
+    height: 58px;
+    width: auto;
+    display: block;
+    transition: all 0.25s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 14px rgba(82, 171, 255, 0.65));
+}
 
         .brand-name {
             font-size: 1.65rem;
@@ -692,8 +704,12 @@
     <header class="site-header">
         <div class="container navbar">
             <a class="brand" href="#top" aria-label="ARX homepage">
-                <span class="brand-name">ARX</span>
-            </a>
+    <img
+        src="assets/logos/arx-shield.png"
+        alt="ARX"
+        class="brand-logo"
+    >
+</a>
 
             <nav aria-label="Main navigation">
                 <ul class="nav-links">
