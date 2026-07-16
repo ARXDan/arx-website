@@ -608,89 +608,26 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .product-stage {
-        min-height: 560px;
-    }
-
-    .product-wrap {
-        width: min(100%, 520px);
-    }
-
     .product-card {
         padding: 32px;
     }
 }
 
 @media (max-width: 680px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .navbar {
-        min-height: 88px;
-    }
-
-    .brand-logo {
-        width: 64px;
-        height: 64px;
-    }
-
-    .brand-wordmark {
-        width: 150px;
-    }
-
     .nav-links li:not(:last-child) {
         display: none;
-    }
-
-    .hero {
-        padding-top: 118px;
     }
 
     .hero h1 {
         font-size: 4.2rem;
     }
 
-    .hero-tagline {
-        font-size: 1.15rem;
-    }
-
-    .hero-description {
-        font-size: 0.98rem;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .button {
-        width: 100%;
-    }
-
     section {
         padding: 80px 0;
     }
 
-    .product-stage {
-        min-height: 460px;
-    }
-
-    .product-wrap {
-        width: min(100%, 420px);
-    }
-
     .product-card {
         padding: 22px;
-        gap: 28px;
-    }
-
-    .product-visual {
-        min-height: 320px;
-    }
-
-    .product-card-image {
-        width: min(100%, 340px);
     }
 
     .footer-content {
