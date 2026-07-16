@@ -303,15 +303,24 @@
 }
 
         .product-glow {
-            position: absolute;
+    position: absolute;
+    width: 650px;
+    height: 650px;
 
-            width: 370px;
-            height: 370px;
+    background: radial-gradient(
+        circle,
+        rgba(60,145,255,.55) 0%,
+        rgba(30,90,220,.30) 35%,
+        rgba(20,40,90,.10) 60%,
+        transparent 80%
+    );
 
-            background: rgba(52, 137, 237, 0.32);
-            border-radius: 50%;
-            filter: blur(90px);
-        }
+    filter: blur(90px);
+    border-radius: 50%;
+    z-index: 0;
+
+    animation: glowPulse 7s ease-in-out infinite;
+}
 
         .slab-guard {
             position: relative;
