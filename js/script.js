@@ -7,18 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     particlesContainer.innerHTML = "";
 
-    const particleCount = 40;
+    const particleCount = 140;
 
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement("span");
-        const size = 2 + Math.random() * 3;
+        const size = 1.5 + Math.random() * 2.8;
+        const variant = Math.random() > 0.72 ? "particle--white" : "particle--blue";
 
-        particle.className = "particle";
+        particle.className = `particle ${variant}`;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
-        particle.style.animationDuration = `${7 + Math.random() * 8}s`;
-        particle.style.animationDelay = `${-Math.random() * 12}s`;
+        particle.style.animationDuration = `${5 + Math.random() * 6}s`;
+        particle.style.animationDelay = `${-Math.random() * 9}s`;
 
         particlesContainer.appendChild(particle);
     }
