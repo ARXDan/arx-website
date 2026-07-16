@@ -99,7 +99,14 @@
             min-height: 78px;
         }
 
-        .brand-logo {
+        .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.brand-logo {
     height: 65px;
     width: auto;
     display: block;
@@ -701,11 +708,23 @@
         <div class="container navbar">
             <a class="brand" href="#top" aria-label="ARX homepage">
     <img
-    src="assets/logos/arx-shield.png"
-    alt="ARX"
-    class="brand-logo"
->
+        src="assets/logos/arx-shield.png"
+        alt="ARX Shield"
+        class="brand-logo"
+    >
+
+    <img
+        src="assets/logos/arx-wordmark.png"
+        alt="ARX"
+        class="brand-wordmark"
+    >
 </a>
+
+.brand-wordmark {
+    height: 28px;
+    width: auto;
+    display: block;
+}
 
             <nav aria-label="Main navigation">
                 <ul class="nav-links">
