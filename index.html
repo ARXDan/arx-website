@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARX | Protect. Display. Elevate.</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background:
+                radial-gradient(circle at top, #14305c 0%, #071121 35%, #02050a 75%);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: min(1200px, 90%);
+            margin: 0 auto;
+            padding: 28px 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+        }
+
+        nav a {
+            margin-left: 28px;
+            color: #d9e8ff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            display: flex;
+            min-height: calc(100vh - 100px);
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            margin-bottom: 18px;
+            color: #78b7ff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-bottom: 22px;
+            font-size: clamp(3rem, 9vw, 7rem);
+            line-height: 0.95;
+        }
+
+        .tagline {
+            margin-bottom: 18px;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            letter-spacing: 0.08em;
+        }
+
+        .description {
+            max-width: 650px;
+            margin: 0 auto 34px;
+            color: #b8c5d9;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 28px;
+            border: 1px solid #78b7ff;
+            border-radius: 999px;
+            color: white;
+            background: rgba(31, 116, 220, 0.24);
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            background: rgba(31, 116, 220, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">ARX</div>
+
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">Premium graded-card protection</p>
+
+            <h1>ARX</h1>
+
+            <p class="tagline">Protect. Display. Elevate.</p>
+
+            <p class="description">
+                Premium protection and display solutions built for collectors
+                who want their graded cards protected without hiding what makes
+                them worth displaying.
+            </p>
+
+            <a class="button" href="#products">Discover ARX</a>
+        </div>
+    </main>
+</body>
+</html>
