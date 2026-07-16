@@ -28,6 +28,10 @@ const productStage = document.getElementById("product-stage");
 const heroProduct = document.getElementById("hero-product");
 
 if (productStage && heroProduct) {
+    productStage.addEventListener("mouseenter", () => {
+        productStage.classList.add("is-hovered");
+    });
+
     productStage.addEventListener("mousemove", (event) => {
         const bounds = productStage.getBoundingClientRect();
         const mouseX = event.clientX - bounds.left;
@@ -42,6 +46,7 @@ if (productStage && heroProduct) {
     });
 
     productStage.addEventListener("mouseleave", () => {
+        productStage.classList.remove("is-hovered");
         heroProduct.style.setProperty("--rotate-x", "0deg");
         heroProduct.style.setProperty("--rotate-y", "0deg");
     });

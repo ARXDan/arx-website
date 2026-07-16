@@ -248,12 +248,29 @@ a {
     transition: transform 180ms ease-out;
 }
 
+.hero-product-reflection {
+    position: absolute;
+    top: 88%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: scaleY(-1) perspective(1100px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
+    opacity: 0.16;
+    filter: blur(6px) brightness(0.55);
+    pointer-events: none;
+    z-index: 1;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 72%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 72%);
+}
+
 .product-shine {
     position: absolute;
     inset: 0;
     z-index: 3;
     overflow: hidden;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 160ms ease;
     -webkit-mask-image: url("assets/products/arx-slab-guard-v2.png");
     mask-image: url("assets/products/arx-slab-guard-v2.png");
     -webkit-mask-size: contain;
@@ -262,6 +279,10 @@ a {
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
+}
+
+.product-stage.is-hovered .product-shine {
+    opacity: 1;
 }
 
 .product-shine::before {
@@ -274,21 +295,34 @@ a {
     transform: skewX(-18deg);
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
     filter: blur(8px);
-    animation: shine-sweep 6s ease-in-out infinite;
+    opacity: 0;
+}
+
+.product-stage.is-hovered .product-shine::before {
+    animation: shine-sweep 900ms ease-in-out;
+    opacity: 0.9;
 }
 
 .product-floor {
     position: absolute;
     left: 50%;
-    bottom: 35px;
-    width: 460px;
-    height: 90px;
+    bottom: 18px;
+    width: min(560px, 78%);
+    height: 120px;
     transform: translateX(-50%);
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(76, 164, 255, 0.4) 0%, rgba(76, 164, 255, 0.16) 45%, transparent 75%);
-    filter: blur(18px);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(76, 164, 255, 0.72) 0%,
+        rgba(76, 164, 255, 0.36) 42%,
+        rgba(76, 164, 255, 0.16) 65%,
+        transparent 80%
+    );
+    box-shadow: 0 0 80px rgba(76, 164, 255, 0.45);
+    filter: blur(24px);
     pointer-events: none;
     z-index: 1;
+    opacity: 0.95;
 }
 
 .particles {
