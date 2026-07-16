@@ -217,6 +217,21 @@ a {
     min-height: 760px;
 }
 
+.product-stage::before {
+    content: "";
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    width: min(700px, 90%);
+    height: 360px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(95, 180, 255, 0.34), rgba(35, 106, 205, 0.18) 45%, transparent 72%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .product-glow {
     position: absolute;
     z-index: 0;
@@ -250,17 +265,17 @@ a {
 
 .hero-product-reflection {
     position: absolute;
-    top: 88%;
+    top: 89%;
     left: 0;
     width: 100%;
     height: auto;
     transform: scaleY(-1) perspective(1100px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg));
-    opacity: 0.16;
-    filter: blur(6px) brightness(0.55);
+    opacity: 0.12;
+    filter: blur(8px) brightness(0.48);
     pointer-events: none;
     z-index: 1;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 72%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 72%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 76%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 76%);
 }
 
 .product-shine {
@@ -306,23 +321,23 @@ a {
 .product-floor {
     position: absolute;
     left: 50%;
-    bottom: 18px;
-    width: min(560px, 78%);
-    height: 120px;
+    bottom: 14px;
+    width: min(620px, 86%);
+    height: 132px;
     transform: translateX(-50%);
     border-radius: 50%;
     background: radial-gradient(
         ellipse at center,
-        rgba(76, 164, 255, 0.72) 0%,
-        rgba(76, 164, 255, 0.36) 42%,
-        rgba(76, 164, 255, 0.16) 65%,
+        rgba(92, 188, 255, 0.82) 0%,
+        rgba(76, 164, 255, 0.45) 42%,
+        rgba(76, 164, 255, 0.18) 68%,
         transparent 80%
     );
-    box-shadow: 0 0 80px rgba(76, 164, 255, 0.45);
-    filter: blur(24px);
+    box-shadow: 0 0 90px rgba(76, 164, 255, 0.48);
+    filter: blur(28px);
     pointer-events: none;
     z-index: 1;
-    opacity: 0.95;
+    opacity: 0.98;
 }
 
 .particles {
