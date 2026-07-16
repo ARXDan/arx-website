@@ -71,9 +71,10 @@
         }
 
         .container {
-            width: min(var(--max-width), 90%);
-            margin: 0 auto;
-        }
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
 
         /* Navigation */
 
@@ -92,33 +93,32 @@
         }
 
         .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            min-height: 78px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 110px;
+}
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
     text-decoration: none;
     flex-shrink: 0;
 }
 
 .brand-logo {
-    display: block;
-    width: 52px;
-    height: 52px;
+    width: 82px;
+    height: 82px;
     object-fit: contain;
+    display: block;
     flex-shrink: 0;
 }
 
 .brand-wordmark {
-    display: block;
-    width: 135px;
-    height: 42px;
+    width: 220px;
+    height: auto;
     object-fit: contain;
+    display: block;
     flex-shrink: 0;
 }
 
