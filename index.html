@@ -1099,5 +1099,33 @@
             </p>
         </div>
     </footer>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const particlesContainer = document.getElementById("particles");
+
+    if (!particlesContainer) {
+        return;
+    }
+
+    particlesContainer.innerHTML = "";
+
+    const particleCount = 40;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("span");
+        const size = 2 + Math.random() * 3;
+
+        particle.className = "particle";
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animationDuration = `${7 + Math.random() * 8}s`;
+        particle.style.animationDelay = `${-Math.random() * 12}s`;
+
+        particlesContainer.appendChild(particle);
+    }
+});
+</script>
 </body>
 </html>
